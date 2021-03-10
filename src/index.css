@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #313131;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+h1{
+  color: #fff;
+}
+/* user interface container */
+.user-interface {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+/* default welcome text */
+.user-welcome {
+  text-align: center;
+}
+/* profile container */
+.user-profile {
+  position: relative;
+  display: block;
+  max-width: 500px;
+  background: white;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.user-refresh {
+  transition: 0.25s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(202, 62, 71, 0.5);
+  top: 0;
+  right: 0;
+  transform: rotate(0deg);
+  z-index: 1;
+  cursor: pointer;
+}
+.user-refresh:hover {
+  width: 35px;
+  height: 35px;
+}
+/* profile thumb container */
+.user-thumb {
+  position: relative;
+  width: 150px;
+  margin: 0 auto;
+  font-size: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.user-thumb img {
+  width: 100%;
+}
+.user-status {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 5px;
+  bottom: 0;
+}
+.user-status-online {
+  position: relative;
+  width: 20px;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+.user-status-online.online {
+  background: green;
+}
+.user-status-online.away {
+  background: orange;
+}
+.user-status-online.busy {
+  background: red;
+}
+.user-status-online.offline {
+  background: lightgray;
+}
+/* profile info container */
+.user-info {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.user-info span {
+  display: block;
+}
+.user-login {
+  font-size: 18px;
+  font-weight: lighter;
+}
+.user-name {
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: normal;
+  padding-bottom: 1px;
+}
+.user-nat {
+  font-weight: lighter;
+  font-size: 18px;
+}
+/* profile contact container */
+.user-contact {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 35px;
+  background: #ca3e47;
+}
+.user-contact-info {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 50%;
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 1;
+  color: #fff;
+}
+.user-contact-info:hover a {
+  visibility: visible;
+  opacity: 1;
+}
+.user-contact-info:nth-child(1):hover a {
+  right: 0;
+}
+.user-contact-info:nth-child(2):hover a {
+  left: 0;
+  width: 100%;
+}
+.user-contact-info svg {
+  transition: 0.25s;
+}
+.user-contact-info:hover svg {
+  opacity: 0;
+}
+.user-contact-info a {
+  transition: 0.25s;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  height: 100%;
+  background: #ca3e47;
+  padding: 0px 10px;
+  color: #fff;
+  min-width: 95px;
+  visibility: hidden;
+  opacity: 0;
+}
+.user-contact-info:nth-child(1) a {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 0;
+  right: 5px;
+}
+.user-contact-info:nth-child(2) a {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 0;
+  left: 5px;
+}
+/* profile bio container */
+.user-bio {
+  position: relative;
+  text-align: center;
+}
+.user-bio p {
+  position: relative;
+  font-size: 16px;
+}
+/* tool tip */
+.user-tooltip {
+  transition: 0.25s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background: white;
+  top: -16px;
+  font-size: 16px;
+  padding: 0px 10px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  line-height: 1;
+  text-transform: capitalize;
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.user-tooltip:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  top: 21px;
+}
+.user-status-online:hover + .user-tooltip,
+.user-refresh:hover .user-tooltip {
+  top: -30px;
+  opacity: 1;
+  visibility: visible;
+}
+/* helpers */
+.pad-sides {
+  padding: 0 10px;
+}
